@@ -1,411 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Geesemode Hosting | Minecraft Server Hosting</title>
+<title>Geesemode Hosting | Premium Minecraft Server Hosting</title>
 
-<style>
-* {
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body {
-    margin:0;
-    background:#0f1117;
-    color:white;
-}
-
-header {
-    background:linear-gradient(135deg,#16a34a,#15803d);
-    padding:60px 20px;
-    text-align:center;
-}
-
-header h1 {
-    font-size:48px;
-    margin:0;
-}
-
-header p {
-    font-size:20px;
-}
-
-nav {
-    background:#080a0f;
-    padding:15px;
-    text-align:center;
-}
-
-nav a {
-    color:white;
-    margin:0 15px;
-    text-decoration:none;
-}
-
-section {
-    padding:50px 10%;
-}
-
-h2 {
-    text-align:center;
-    font-size:34px;
-}
-
-.cards {
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:25px;
-}
-
-.card {
-    background:#1a1f2b;
-    padding:25px;
-    border-radius:12px;
-    width:300px;
-    text-align:center;
-    box-shadow:0 0 15px #000;
-}
-
-.card h3 {
-    color:#22c55e;
-}
-
-.price {
-    font-size:35px;
-    font-weight:bold;
-}
-
-button {
-    background:#22c55e;
-    color:white;
-    border:0;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-button:hover {
-    background:#16a34a;
-}
-
-.features {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.feature {
-    background:#1a1f2b;
-    padding:20px;
-    border-radius:10px;
-}
-
-select {
-    width:100%;
-    padding:10px;
-    background:#0f1117;
-    color:white;
-    border:1px solid #22c55e;
-    border-radius:6px;
-}
-
-input {
-    accent-color:#22c55e;
-}
-
-footer {
-    background:#080a0f;
-    padding:25px;
-    text-align:center;
-}
-
-
-#popup {
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    justify-content:center;
-    align-items:center;
-}
-
-.popup-box {
-    background:#1a1f2b;
-    padding:35px;
-    border-radius:15px;
-    text-align:center;
-    width:350px;
-}
-
-.error {
-    color:#ef4444;
-    font-size:32px;
-    font-weight:bold;
-}
-
-</style>
-
-
-<script>
-
-function buyServer(){
-    document.getElementById("popup").style.display="flex";
-}
-
-function closePopup(){
-    document.getElementById("popup").style.display="none";
-}
-
-</script>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+<header class="navbar">
 
-<header>
+<div class="logo">
+🟩 Geesemode Hosting
+</div>
 
-<h1>Geesemode Hosting</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="plans.html">Plans</a>
+<a href="custom.html">Custom</a>
+<a href="features.html">Features</a>
+<a href="support.html">Support</a>
+</nav>
 
-<p>Premium Minecraft Server Hosting</p>
-
-<p>Fast • Reliable • Affordable</p>
+<button class="mobile-menu" onclick="toggleMenu()">
+☰
+</button>
 
 </header>
 
 
-<nav>
-
-<a href="#plans">Plans</a>
-<a href="#custom">Custom</a>
-<a href="#features">Features</a>
-<a href="#domains">Domains</a>
-
-</nav>
-
-
-
-<section id="features">
-
-<h2>Why Choose Geesemode?</h2>
-
-
-<div class="features">
-
-<div class="feature">
-<h3>⚡ High Performance</h3>
-<p>Powerful hardware built for Minecraft servers.</p>
-</div>
-
-
-<div class="feature">
-<h3>🛡 DDoS Protection</h3>
-<p>Protection designed to keep servers online.</p>
-</div>
-
-
-<div class="feature">
-<h3>📦 Instant Setup</h3>
-<p>Servers ready shortly after ordering.</p>
-</div>
-
-
-<div class="feature">
-<h3>🔧 Full Control</h3>
-<p>Manage files, plugins, mods, and settings.</p>
-</div>
-
-</div>
-
-</section>
-
-
-
-
-<section id="plans">
-
-<h2>Hosting Plans</h2>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>Starter</h3>
-
-<div class="price">$2.99/mo</div>
-
-<p>🧠 2GB RAM</p>
-<p>👥 5 Player Slots</p>
-<p>💾 10GB Storage</p>
-<p>⚙️ 2 Shared CPU Cores</p>
-
-<button onclick="buyServer()">Buy Server</button>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h3>Pro</h3>
-
-<div class="price">$6.99/mo</div>
-
-<p>🧠 4GB RAM</p>
-<p>👥 10 Player Slots</p>
-<p>💾 20GB Storage</p>
-<p>⚙️ 4 Shared CPU Cores</p>
-
-<button onclick="buyServer()">Buy Server</button>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h3>Ultimate</h3>
-
-<div class="price">$12.99/mo</div>
-
-<p>🧠 10GB RAM</p>
-<p>👥 100 Player Slots</p>
-<p>💾 100GB Storage</p>
-<p>⚙️ 8 Dedicated CPU Cores</p>
-<p>🟢 24/7 Uptime</p>
-
-<button onclick="buyServer()">Buy Server</button>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-
-
-<section id="custom">
-
-
-<h2>Create Custom Server</h2>
-
-
-<div class="card" style="margin:auto;">
-
-
-<h3>Custom Plan</h3>
-
-
-<p>RAM</p>
-
-<select>
-<option>2GB RAM</option>
-<option>4GB RAM</option>
-<option>8GB RAM</option>
-<option>16GB RAM</option>
-<option>32GB RAM</option>
-</select>
-
-
-<p>Player Slots</p>
-
-<select>
-<option>5 Players</option>
-<option>10 Players</option>
-<option>25 Players</option>
-<option>50 Players</option>
-<option>100 Players</option>
-<option>Unlimited Players</option>
-</select>
-
-
-
-<p>Storage</p>
-
-<select>
-<option>10GB SSD</option>
-<option>20GB SSD</option>
-<option>50GB SSD</option>
-<option>100GB SSD</option>
-<option>250GB SSD</option>
-</select>
-
-
-
-<p>CPU</p>
-
-<select>
-<option>2 Shared CPU Cores</option>
-<option>4 Shared CPU Cores</option>
-<option>6 Shared CPU Cores</option>
-<option>8 Dedicated CPU Cores</option>
-</select>
-
-
-<p>Extras</p>
-
-<label><input type="checkbox"> 24/7 Uptime</label><br>
-<label><input type="checkbox"> Automatic Backups</label><br>
-<label><input type="checkbox"> DDoS Protection</label><br>
-<label><input type="checkbox"> Free Subdomain</label>
-
-
-<br><br>
-
-<button onclick="buyServer()">Create Server</button>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section id="domains">
-
-
-<h2>Free Subdomains</h2>
-
-
-<p style="text-align:center;font-size:20px;">
-Every Geesemode server includes a free Minecraft subdomain.
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Premium Minecraft Hosting
+<br>
+Built For Your Community
+</h1>
+
+<p>
+Fast, reliable Minecraft servers powered by modern hardware.
+Deploy your server with Geesemode Hosting today.
 </p>
 
 
+<div class="hero-buttons">
+
+<a href="plans.html" class="btn">
+🚀 View Plans
+</a>
+
+<button onclick="openStock()" class="btn secondary">
+Create Server
+</button>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<h3>
+⚡ Geesemode Network
+</h3>
+
+<p>
+99.99% Network Availability
+</p>
+
+<p>
+🛡 Enterprise DDoS Protection
+</p>
+
+<p>
+💾 NVMe SSD Storage
+</p>
+
+<p>
+🌎 Global Server Locations
+</p>
+
+</div>
+
+</section>
+
+
+
+<section class="stats">
+
+
+<div class="stat">
+
+<h2>
+99.99%
+</h2>
+
+<p>
+Uptime
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>
+500+
+</h2>
+
+<p>
+Servers Hosted
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>
+24/7
+</h2>
+
+<p>
+Support
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>
+<30m
+</h2>
+
+<p>
+Response Time
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="section">
+
+
+<h2>
+Why Choose Geesemode?
+</h2>
+
+
 <div class="cards">
 
 
 <div class="card">
-<h3>YourServer.geesemode.com</h3>
-<p>Professional server address.</p>
+
+<h3>
+⚡ High Performance
+</h3>
+
+<p>
+Modern CPUs and fast NVMe storage deliver smooth gameplay.
+</p>
+
 </div>
 
 
+
 <div class="card">
-<h3>Instant Setup</h3>
-<p>Your subdomain activates automatically.</p>
+
+<h3>
+🛡 DDoS Protection
+</h3>
+
+<p>
+Keep your Minecraft community protected from attacks.
+</p>
+
 </div>
 
 
+
 <div class="card">
-<h3>No Extra Cost</h3>
-<p>Included with every server plan.</p>
+
+<h3>
+📦 Instant Setup
+</h3>
+
+<p>
+Your server is ready shortly after ordering.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🔧 Full Control
+</h3>
+
+<p>
+Manage files, plugins, worlds, and configurations.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+💾 Automatic Backups
+</h3>
+
+<p>
+Protect your worlds with scheduled backups.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🌐 Free Subdomain
+</h3>
+
+<p>
+Every server receives a free geesemode.com address.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="section dark">
+
+
+<h2>
+Minecraft Software Support
+</h2>
+
+
+<p class="center">
+Run your server your way.
+</p>
+
+
+<div class="software">
+
+
+<span>🟢 Paper</span>
+<span>🟣 Purpur</span>
+<span>🔵 Spigot</span>
+<span>🧵 Fabric</span>
+<span>🔥 Forge</span>
+<span>⚙ NeoForge</span>
+<span>⬜ Vanilla</span>
+<span>🌉 Velocity</span>
+<span>🔀 BungeeCord</span>
+<span>🎮 Geyser</span>
+
+
+</div>
+
+
+</section>
+<section class="section">
+
+<h2>
+Popular Hosting Plans
+</h2>
+
+
+<div class="cards">
+
+
+<div class="plan-card">
+
+<h3>
+Starter
+</h3>
+
+<h1>
+$2.99<span>/mo</span>
+</h1>
+
+<ul>
+<li>🧠 2GB RAM</li>
+<li>👥 5 Player Slots</li>
+<li>💾 10GB Storage</li>
+<li>⚙️ 2 Shared CPU Cores</li>
+<li>🌐 Free Subdomain</li>
+</ul>
+
+<button onclick="openStock()">
+Order Now
+</button>
+
+</div>
+
+
+
+
+<div class="plan-card featured">
+
+<div class="badge">
+POPULAR
+</div>
+
+<h3>
+Pro
+</h3>
+
+<h1>
+$6.99<span>/mo</span>
+</h1>
+
+<ul>
+<li>🧠 4GB RAM</li>
+<li>👥 10 Player Slots</li>
+<li>💾 20GB Storage</li>
+<li>⚙️ 4 Shared CPU Cores</li>
+<li>🛡 DDoS Protection</li>
+<li>🌐 Free Subdomain</li>
+</ul>
+
+<button onclick="openStock()">
+Order Now
+</button>
+
+</div>
+
+
+
+
+<div class="plan-card">
+
+<h3>
+Ultimate
+</h3>
+
+<h1>
+$12.99<span>/mo</span>
+</h1>
+
+<ul>
+<li>🧠 10GB RAM</li>
+<li>👥 100 Player Slots</li>
+<li>💾 100GB Storage</li>
+<li>⚙️ 8 Dedicated CPU Cores</li>
+<li>🟢 24/7 Uptime</li>
+<li>⭐ Priority Support</li>
+</ul>
+
+<button onclick="openStock()">
+Order Now
+</button>
+
 </div>
 
 
@@ -413,40 +387,292 @@ Every Geesemode server includes a free Minecraft subdomain.
 
 
 </section>
+
+
+
+
+
+<section class="section dark">
+
+<h2>
+Free Minecraft Subdomains
+</h2>
+
+
+<div class="domain-box">
+
+<h3>
+YourServer.geesemode.com
+</h3>
+
+
+<p>
+Every Geesemode server receives a free custom subdomain.
+</p>
+
+
+<div class="domain-features">
+
+<div>
+🚀 Instant Activation
+</div>
+
+<div>
+🔒 SSL Ready
+</div>
+
+<div>
+💸 Always Free
+</div>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="section">
+
+
+<h2>
+What Players Say
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+⭐ Alex
+</h3>
+
+<p>
+"Setup was instant and my modded server runs perfectly."
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+⭐ Jamie
+</h3>
+
+<p>
+"The performance is amazing even with lots of plugins."
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+⭐ Sam
+</h3>
+
+<p>
+"The free subdomain and backups are great."
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="section dark">
+
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+
+<div class="faq">
+
+
+<div class="faq-item">
+
+<button onclick="toggleFAQ(this)">
+How fast are servers created?
+</button>
+
+<p>
+Servers are normally prepared within minutes after purchase.
+</p>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button onclick="toggleFAQ(this)">
+Can I install mods and plugins?
+</button>
+
+<p>
+Yes. Geesemode supports Paper, Forge, Fabric, NeoForge, and more.
+</p>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button onclick="toggleFAQ(this)">
+Do I get a free domain?
+</button>
+
+<p>
+Yes. Every server includes a free geesemode.com subdomain.
+</p>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button onclick="toggleFAQ(this)">
+Do you provide backups?
+</button>
+
+<p>
+Automatic backups are available depending on your plan.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
 
 
 
 
 <footer>
 
-© 2026 Geesemode Hosting
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+🟩 Geesemode Hosting
+</h3>
+
+<p>
+Premium Minecraft server hosting made simple.
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+Links
+</h3>
+
+<a href="plans.html">
+Plans
+</a>
+
+<br>
+
+<a href="features.html">
+Features
+</a>
+
+<br>
+
+<a href="support.html">
+Support
+</a>
+
+</div>
+
+
+
+<div>
+
+<h3>
+Status
+</h3>
+
+<p>
+🟢 All Systems Operational
+</p>
+
+</div>
+
+
+</div>
+
+
+<p class="copyright">
+© 2026 Geesemode Hosting. All rights reserved.
+</p>
+
 
 </footer>
 
 
 
 
-<div id="popup">
+
+<div id="stockModal" class="modal">
 
 
-<div class="popup-box">
+<div class="modal-box">
 
 
-<div class="error">
-Out of Stock!
-</div>
+<h1>
+🚫 Out of Stock!
+</h1>
 
 
 <p>
-All available server slots are currently occupied.
+All available Minecraft hosting nodes are currently occupied.
 </p>
+
 
 <p>
-Please check back later.
+Our team is deploying additional hardware.
 </p>
 
 
-<button onclick="closePopup()">
+<p>
+Please check back soon.
+</p>
+
+
+<button onclick="closeStock()">
 Close
 </button>
 
@@ -458,5 +684,10 @@ Close
 
 
 
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>

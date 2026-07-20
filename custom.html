@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geesemode Hosting | Custom Server</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+<div class="logo">
+🟩 Geesemode Hosting
+</div>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="plans.html">Plans</a>
+<a href="custom.html">Custom</a>
+<a href="features.html">Features</a>
+<a href="support.html">Support</a>
+
+</nav>
+
+
+<button class="mobile-menu" onclick="toggleMenu()">
+☰
+</button>
+
+
+</header>
+
+
+
+
+
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Build Your Custom Minecraft Server
+</h1>
+
+<p>
+Choose exactly what resources your community needs.
+</p>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h2>
+Server Configuration
+</h2>
+
+
+
+<div class="card custom-builder">
+
+
+<h3>
+⚙️ Resources
+</h3>
+
+
+
+<label for="ram">RAM</label>
+
+<select id="ram" name="ram" onchange="calculateCustomPrice()">
+
+<option value="0">
+2GB RAM
+</option>
+
+<option value="2">
+4GB RAM
+</option>
+
+<option value="5">
+8GB RAM
+</option>
+
+<option value="9">
+16GB RAM
+</option>
+
+<option value="18">
+32GB RAM
+</option>
+
+</select>
+
+
+
+
+
+<label for="players">Player Slots</label>
+
+
+<select id="players" name="players" onchange="calculateCustomPrice()">
+
+<option value="0">
+5 Players
+</option>
+
+<option value="1">
+10 Players
+</option>
+
+<option value="3">
+25 Players
+</option>
+
+<option value="5">
+50 Players
+</option>
+
+<option value="10">
+100 Players
+</option>
+
+<option value="15">
+Unlimited Players
+</option>
+
+</select>
+
+
+
+
+
+
+<label for="storage">Storage</label>
+
+
+<select id="storage" name="storage" onchange="calculateCustomPrice()">
+
+<option value="0">
+10GB NVMe
+</option>
+
+<option value="2">
+25GB NVMe
+</option>
+
+<option value="5">
+50GB NVMe
+</option>
+
+<option value="10">
+100GB NVMe
+</option>
+
+<option value="20">
+250GB NVMe
+</option>
+
+<option value="35">
+500GB NVMe
+</option>
+
+</select>
+
+
+
+
+
+
+<label for="cpu">CPU</label>
+
+
+<select id="cpu" name="cpu" onchange="calculateCustomPrice()">
+
+
+<option value="0">
+2 Shared CPU Cores
+</option>
+
+
+<option value="3">
+4 Shared CPU Cores
+</option>
+
+
+<option value="7">
+6 Shared CPU Cores
+</option>
+
+
+<option value="15">
+8 Dedicated CPU Cores
+</option>
+
+
+</select>
+
+
+
+
+
+
+<h3>
+Extras
+</h3>
+
+
+<label class="check">
+
+<input type="checkbox" id="backup"
+onchange="calculateCustomPrice()">
+
+Automatic Backups (+$2)
+
+</label>
+
+
+<label class="check">
+
+<input type="checkbox" id="ip"
+onchange="calculateCustomPrice()">
+
+Dedicated IP (+$3)
+
+</label>
+
+
+
+<label class="check">
+
+<input type="checkbox" id="priority"
+onchange="calculateCustomPrice()">
+
+Priority Support (+$5)
+
+</label>
+
+
+
+<label class="check">
+
+<input type="checkbox" id="subdomain">
+
+Free Subdomain
+
+</label>
+
+
+
+<br>
+
+
+<div class="price-box">
+
+Estimated Price:
+
+<strong id="customPrice">
+$2.99/mo
+</strong>
+
+
+</div>
+
+
+
+<button onclick="openStock()">
+
+Create Custom Server
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="section dark">
+
+
+<h2>
+Included With Custom Servers
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+🛡 Security
+</h3>
+
+<p>
+DDoS protection and account security.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+💾 Storage
+</h3>
+
+<p>
+Fast NVMe storage for worlds and backups.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🔧 Control Panel
+</h3>
+
+<p>
+Manage your server from anywhere.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🌎 Locations
+</h3>
+
+<p>
+Choose from multiple hosting regions.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<div id="stockModal" class="modal">
+
+
+<div class="modal-box">
+
+
+<h1>
+🚫 Out of Stock!
+</h1>
+
+
+<p>
+Custom server orders are temporarily unavailable.
+</p>
+
+
+<p>
+New hardware is being deployed.
+</p>
+
+
+<button onclick="closeStock()">
+Close
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+function calculateCustomPrice(){
+
+
+let price = 2.99;
+
+
+price += Number(
+document.getElementById("ram").value
+);
+
+
+price += Number(
+document.getElementById("players").value
+);
+
+
+price += Number(
+document.getElementById("storage").value
+);
+
+
+price += Number(
+document.getElementById("cpu").value
+);
+
+
+
+if(document.getElementById("backup").checked){
+
+price += 2;
+
+}
+
+
+
+if(document.getElementById("ip").checked){
+
+price += 3;
+
+}
+
+
+
+if(document.getElementById("priority").checked){
+
+price += 5;
+
+}
+
+
+
+document.getElementById("customPrice").innerHTML =
+"$" + price.toFixed(2) + "/mo";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
