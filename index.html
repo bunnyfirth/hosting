@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Geesemode Hosting | Minecraft Server Hosting</title>
+
+<style>
+* {
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin:0;
+    background:#0f1117;
+    color:white;
+}
+
+header {
+    background:linear-gradient(135deg,#16a34a,#15803d);
+    padding:60px 20px;
+    text-align:center;
+}
+
+header h1 {
+    font-size:48px;
+    margin:0;
+}
+
+header p {
+    font-size:20px;
+}
+
+nav {
+    background:#080a0f;
+    padding:15px;
+    text-align:center;
+}
+
+nav a {
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+}
+
+section {
+    padding:50px 10%;
+}
+
+h2 {
+    text-align:center;
+    font-size:34px;
+}
+
+.cards {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.card {
+    background:#1a1f2b;
+    padding:25px;
+    border-radius:12px;
+    width:300px;
+    text-align:center;
+    box-shadow:0 0 15px #000;
+}
+
+.card h3 {
+    color:#22c55e;
+}
+
+.price {
+    font-size:35px;
+    font-weight:bold;
+}
+
+button {
+    background:#22c55e;
+    color:white;
+    border:0;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover {
+    background:#16a34a;
+}
+
+.features {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.feature {
+    background:#1a1f2b;
+    padding:20px;
+    border-radius:10px;
+}
+
+select {
+    width:100%;
+    padding:10px;
+    background:#0f1117;
+    color:white;
+    border:1px solid #22c55e;
+    border-radius:6px;
+}
+
+input {
+    accent-color:#22c55e;
+}
+
+footer {
+    background:#080a0f;
+    padding:25px;
+    text-align:center;
+}
+
+
+#popup {
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-box {
+    background:#1a1f2b;
+    padding:35px;
+    border-radius:15px;
+    text-align:center;
+    width:350px;
+}
+
+.error {
+    color:#ef4444;
+    font-size:32px;
+    font-weight:bold;
+}
+
+</style>
+
+
+<script>
+
+function buyServer(){
+    document.getElementById("popup").style.display="flex";
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+
+</script>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>Geesemode Hosting</h1>
+
+<p>Premium Minecraft Server Hosting</p>
+
+<p>Fast • Reliable • Affordable</p>
+
+</header>
+
+
+<nav>
+
+<a href="#plans">Plans</a>
+<a href="#custom">Custom</a>
+<a href="#features">Features</a>
+<a href="#domains">Domains</a>
+
+</nav>
+
+
+
+<section id="features">
+
+<h2>Why Choose Geesemode?</h2>
+
+
+<div class="features">
+
+<div class="feature">
+<h3>⚡ High Performance</h3>
+<p>Powerful hardware built for Minecraft servers.</p>
+</div>
+
+
+<div class="feature">
+<h3>🛡 DDoS Protection</h3>
+<p>Protection designed to keep servers online.</p>
+</div>
+
+
+<div class="feature">
+<h3>📦 Instant Setup</h3>
+<p>Servers ready shortly after ordering.</p>
+</div>
+
+
+<div class="feature">
+<h3>🔧 Full Control</h3>
+<p>Manage files, plugins, mods, and settings.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<section id="plans">
+
+<h2>Hosting Plans</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>Starter</h3>
+
+<div class="price">$2.99/mo</div>
+
+<p>🧠 2GB RAM</p>
+<p>👥 5 Player Slots</p>
+<p>💾 10GB Storage</p>
+<p>⚙️ 2 Shared CPU Cores</p>
+
+<button onclick="buyServer()">Buy Server</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>Pro</h3>
+
+<div class="price">$6.99/mo</div>
+
+<p>🧠 4GB RAM</p>
+<p>👥 10 Player Slots</p>
+<p>💾 20GB Storage</p>
+<p>⚙️ 4 Shared CPU Cores</p>
+
+<button onclick="buyServer()">Buy Server</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>Ultimate</h3>
+
+<div class="price">$12.99/mo</div>
+
+<p>🧠 10GB RAM</p>
+<p>👥 100 Player Slots</p>
+<p>💾 100GB Storage</p>
+<p>⚙️ 8 Dedicated CPU Cores</p>
+<p>🟢 24/7 Uptime</p>
+
+<button onclick="buyServer()">Buy Server</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section id="custom">
+
+
+<h2>Create Custom Server</h2>
+
+
+<div class="card" style="margin:auto;">
+
+
+<h3>Custom Plan</h3>
+
+
+<p>RAM</p>
+
+<select>
+<option>2GB RAM</option>
+<option>4GB RAM</option>
+<option>8GB RAM</option>
+<option>16GB RAM</option>
+<option>32GB RAM</option>
+</select>
+
+
+<p>Player Slots</p>
+
+<select>
+<option>5 Players</option>
+<option>10 Players</option>
+<option>25 Players</option>
+<option>50 Players</option>
+<option>100 Players</option>
+<option>Unlimited Players</option>
+</select>
+
+
+
+<p>Storage</p>
+
+<select>
+<option>10GB SSD</option>
+<option>20GB SSD</option>
+<option>50GB SSD</option>
+<option>100GB SSD</option>
+<option>250GB SSD</option>
+</select>
+
+
+
+<p>CPU</p>
+
+<select>
+<option>2 Shared CPU Cores</option>
+<option>4 Shared CPU Cores</option>
+<option>6 Shared CPU Cores</option>
+<option>8 Dedicated CPU Cores</option>
+</select>
+
+
+<p>Extras</p>
+
+<label><input type="checkbox"> 24/7 Uptime</label><br>
+<label><input type="checkbox"> Automatic Backups</label><br>
+<label><input type="checkbox"> DDoS Protection</label><br>
+<label><input type="checkbox"> Free Subdomain</label>
+
+
+<br><br>
+
+<button onclick="buyServer()">Create Server</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section id="domains">
+
+
+<h2>Free Subdomains</h2>
+
+
+<p style="text-align:center;font-size:20px;">
+Every Geesemode server includes a free Minecraft subdomain.
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+<h3>YourServer.geesemode.com</h3>
+<p>Professional server address.</p>
+</div>
+
+
+<div class="card">
+<h3>Instant Setup</h3>
+<p>Your subdomain activates automatically.</p>
+</div>
+
+
+<div class="card">
+<h3>No Extra Cost</h3>
+<p>Included with every server plan.</p>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<footer>
+
+© 2026 Geesemode Hosting
+
+</footer>
+
+
+
+
+<div id="popup">
+
+
+<div class="popup-box">
+
+
+<div class="error">
+Out of Stock!
+</div>
+
+
+<p>
+All available server slots are currently occupied.
+</p>
+
+<p>
+Please check back later.
+</p>
+
+
+<button onclick="closePopup()">
+Close
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+</body>
+</html>
