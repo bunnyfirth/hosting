@@ -119,38 +119,38 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 function animateCounters() {
 
-
-    const counters =
-    document.querySelectorAll(".stat h2");
-
+    const counters = document.querySelectorAll(".stat h2");
 
     counters.forEach(counter => {
 
+        const original = counter.innerText;
 
-        const text = counter.innerText;
+        // Skip special formatted stats
+        if (
+            original.includes("%") ||
+            original.includes("/") ||
+            original.includes("<")
+        ) {
+            return;
+        }
 
 
-        const number =
-        parseInt(text.replace(/\D/g,""));
+        const number = parseInt(original.replace(/\D/g,""));
 
-
-        if(!number) return;
+        if (!number) return;
 
 
         let current = 0;
 
-
-        const increment =
-        Math.ceil(number / 80);
+        const increment = Math.ceil(number / 80);
 
 
-        const timer = setInterval(()=>{
-
+        const timer = setInterval(() => {
 
             current += increment;
 
 
-            if(current >= number) {
+            if (current >= number) {
 
                 current = number;
 
@@ -160,12 +160,10 @@ function animateCounters() {
 
 
             counter.innerText =
-            current +
-            text.replace(/[0-9]/g,"");
+                current + original.replace(/[0-9]/g,"");
 
 
         },20);
-
 
 
     });
